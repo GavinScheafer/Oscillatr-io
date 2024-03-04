@@ -37,3 +37,17 @@ function playNote(){
 function dbtoa(dB){
 	return Math.pow(10,dB*0.05);
 }
+
+function spendBeats(amount) {
+	score -= amount;
+	if (score < 0){
+		score = 0;
+	}
+	document.getElementById("score").innerHTML = "Score: " + score
+}
+
+function stopSound() {
+	clearInterval(timerID);
+	myOscillator.stop(myAudioContext.currentTime + 0.1);
+	myOscillator.disconnect();
+}
