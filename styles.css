@@ -1,0 +1,46 @@
+body {
+    font-family: Comic Sans MS, Arial, sans-serif;
+  }
+  
+  p {
+    margin-bottom: 10px;
+  }
+  
+  button {
+    background-color: green;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: lightgreen;
+  }
+  
+  #score {
+    font-weight: bold;
+  }
+  
+  input[type="button"] {
+    background-color: blue;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+  
+  input[type="button"]:hover {
+    background-color: lightblue;
+  }
+  
