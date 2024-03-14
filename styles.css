@@ -1,20 +1,52 @@
 body {
-    font-family: Comic Sans MS, Arial, sans-serif;
+    font-family: 'Courier New', Courier, monospace, Arial, sans-serif;
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    background-color: #2c2c2c;
+  }
+
+  .header h1 {
+    text-align: top;
+    font-size: 44px;
+    color: white;
+  }
+
+  .header h2 {
+    text-align: center;
+    font-size: 30px;
+    color: white;
+  }
+
+  .main {
+    display: flex;
+    gap: 100px;
+  }
+
+  .left h3{
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 30px;
   }
   
+  .imageDefault {
+    transition: transform 0.1s ease; /* Smooth transition */
+  }
+
   p {
     margin-bottom: 10px;
   }
   
   button {
-    background-color: green;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #2E8B57;
     border: none;
     color: white;
     padding: 10px 20px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 18px;
     margin: 4px 2px;
     cursor: pointer;
   }
@@ -25,18 +57,20 @@ body {
   
   #score {
     font-weight: bold;
+    color: white;
   }
   
   input[type="button"] {
-    background-color: blue;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #4169E1;
     border: none;
     color: white;
     padding: 10px 20px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
+    font-size: 20px;
+    margin: 4px 4px;
     cursor: pointer;
   }
   

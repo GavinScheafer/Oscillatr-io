@@ -11,6 +11,14 @@ var volumeArray = [0,0,0,0,0,0,0,-6]
 var counter = 0;
 var score = 0;
 
+function scaleImage() {
+    var image = document.getElementById("cassetteImage");
+    image.style.transform = "scale(1.1)";
+    setTimeout(function() {
+        image.style.transform = "scale(1)"; 
+    }, 50); 
+}
+
 function playSound() {
 	counter = 0;
 	myOscillator.frequency.value = 0;
@@ -32,6 +40,7 @@ function playNote(){
 	myOscillator.frequency.setValueAtTime(0., myAudioContext.currentTime + 0.05);
 	if (pitchArray[counter] > 0){
 		score += 1;
+		scaleImage();
 	}
 	counter = (counter+1)%8;
 }
