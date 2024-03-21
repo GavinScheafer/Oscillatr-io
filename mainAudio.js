@@ -7,7 +7,7 @@ var myGain = myAudioContext.createGain();
 myOscillator.type = "triangle";
 
 var pitchArray = [0.0,0.0,0.0,0.0,0.0,0.0,0.0,440.0]
-var volumeArray = [0,0,0,0,0,0,0,-6]
+var volumeArray = [-6,-6,-6,-6,-6,-6,-6,-6]
 var counter = 0;
 var score = 0;
 
@@ -23,7 +23,8 @@ function playSound() {
 	counter = 0;
 	myOscillator.frequency.value = 0;
 	myGain.gain.setValueAtTime(0., myAudioContext.currentTime);
-	myOscillator.connect(myAudioContext.destination);
+	myOscillator.connect(myGain);
+	myGain.connect(myAudioContext.destination);
 	if(isOn) {
 		myOscillator.start(myAudioContext.currentTime);
 	}
@@ -33,11 +34,11 @@ function playSound() {
 
 function playNote(){
 	document.getElementById("score").innerHTML = "Score: " + score
-	myOscillator.frequency.setValueAtTime(pitchArray[counter], myAudioContext.currentTime);
-	myGain.gain.linearRampToValueAtTime(dbtoa(volumeArray[counter]), myAudioContext.currentTime+0.005);
-	myGain.gain.setValueAtTime(dbtoa(volumeArray[counter]), myAudioContext.currentTime+0.09);
+	myOscillator.frequency.linearRampToValueAtTime(pitchArray[counter], myAudioContext.currentTime);
+	myGain.gain.setValueAtTime(0., myAudioContext.currentTime+0.005);
+	myGain.gain.linearRampToValueAtTime(dbtoa(volumeArray[counter]), myAudioContext.currentTime+0.05);
+	myOscillator.frequency.setValueAtTime(0., myAudioContext.currentTime + 0.1);
 	myGain.gain.linearRampToValueAtTime(0., myAudioContext.currentTime+0.1);
-	myOscillator.frequency.setValueAtTime(0., myAudioContext.currentTime + 0.05);
 	if (pitchArray[counter] > 0){
 		score += 1;
 		scaleImage();
